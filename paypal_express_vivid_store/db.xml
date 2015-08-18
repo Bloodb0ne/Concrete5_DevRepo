@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	<table name="VividPaypalInvoice">
+		<field name="invoiceID" type="I"><key /><unsigned /><autoincrement/></field>
+		<field name="oID" type="I"></field>
+	</table>
+</schema>

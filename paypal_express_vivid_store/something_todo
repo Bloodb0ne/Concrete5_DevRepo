@@ -1,0 +1,13 @@
+if(($inv = Session::get('cart-invoice')) != null )
+	$inv = Invoice::add(); //Adds to database auto_increment,unique
+	Session::set('cart-invoice',$inv);
+
+on_cancel_paypal
+	$inv = Session::get('cart-invoice');
+	Invoice::remove($inv);
+	Session::set('cart-invoice',null);
+
+on_add_order
+	$inv = Session::get('cart-invoice');
+	Invoice::set($inv,$orderID);
+	Session::set('cart-invoice',null);
