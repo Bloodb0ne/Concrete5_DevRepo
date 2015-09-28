@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema version="0.3">
+
+	<table name="pkgNewsletterEmails">
+		<field name="eID" type="I">
+			<key/>
+			<autoincrement/>
+			<unsigned/>
+		</field>
+		<field name="email" type="C" size="255">
+			<notnull/>
+		</field>
+		<field name="ip" type="C" size="255"></field>
+		<field name="confirmation" type="C" size="255"></field>
+		<field name="confirmed" type="T"></field>
+		<field name="unsubscribed" type="I">
+			<default value='0'></default>		
+		</field>
+		<field name="created" type="T"></field>
+
+		<index name='email_uq'>
+			<unique/>
+			<col>email</col>
+		</index>
+	</table>
+	
+</schema>
