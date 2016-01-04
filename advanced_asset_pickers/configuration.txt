@@ -1,0 +1,22 @@
+This package installs three types of attributes:
+1) UserPicker
+	This attribute stores a user/group or multiple users/groups.Could be used to
+	restrict page to a specific user or group.
+	
+2) FilePicker
+	This attribute stores a file or multiple files. Could be used to attach a gallery of 	images and display them however you want in the view. 
+
+3) PagePicker
+	This attribute stores a page or multiple pages.Could be use to link pages to one 	another.
+
+Each of those attribute has settings that allow you to better control their behavior.
+Attribute Settings:
+	Selection Type: (Single,Multiple) 
+		This setting lets you change if the attribute is for a Single entry or 		Multiple entries.
+	Unique Values:
+		When saving removes duplicate entries.
+	Preserve Order:
+		Because you can reorder the entries this option allows you to perserve the 		order of the entries when the "Unique Values" option is selected
+	
+	
+There is also a description of a filter funtction.That is further described in the Advanced Usage documentation.

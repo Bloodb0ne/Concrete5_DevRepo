@@ -1,0 +1,32 @@
+The advanced filtering allows you to control what objects can the user setting the attribute select.Its not required for your attribute to work.
+
+When you create an attribute you can define a filtering function in a class placed in 
+	application\src\AdvancedAttributeFilters.php
+
+It should look like this:
+[code]
+<?php 
+
+namespace Application\Src;
+
+
+class AdvancedAttributeFilters {
+
+}
+
+[/code]
+
+In the edit dialog of each attribute contained in this package there is a sample description of the filtering function that you must place in this file.
+Example:
+
+[code]
+public static function  filterTestFile( &$srchController, &$fileList){
+     $srchController->searchBar  = false ;
+     // $fileList->setItemsPerPage(1);
+}
+[/code]
+
+The first parameter is the search controller and the only option you can set is "searchBar".You can set it to "false" as shown so searching is removed from the picker dialog.
+Second parameter is the actual list.It depends on the type of attribute, in this example its a FileList and you can use all the filtering and sorting function you would use on a regular File listing on your Concrete 5 website.The same applies to the Page,User/Group lists.
+
+Now you can control what the user selects as a value to the attributes.For example you can restrict your file attribute to add files that are only ".pdf" and are below a certain file size;

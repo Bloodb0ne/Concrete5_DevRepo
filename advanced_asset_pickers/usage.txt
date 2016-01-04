@@ -1,0 +1,22 @@
+Using the attributes in your views and controllers is simple.
+First you fetch the desired attribute value:
+Example:
+
+[code]
+	$items = $page->getAttribute('testFiles');
+[/code]
+
+Now if the attribute is Users/Groups the object $items
+has two methods 
+	$items->getUsers();
+	$items->getGroups();
+they each return a array consisting of User and Group objects respectively.
+
+If the attribute is Files it has one method
+	$items->getFiles();
+that returns an array of File objects.
+
+If the attribute is Pages it has one method 
+	$items->getPages();
+that returns an array of Page objects.
+

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+<table name="atMultipagePickerOptions">
+    <field name="akID" type="I" size="10">
+      <KEY/>
+      <DEFAULT value="0"/>
+      <UNSIGNED/>
+    </field>
+
+    <field name="single" type="I">
+      <NOTNULL/>
+      <DEFAULT value="1"/>
+    </field>
+
+    <field name="path" type="X2">
+      <NOTNULL/>
+      <DEFAULT value=""/>
+    </field>
+
+    <field name="typeHandle" type="X2">
+      <NOTNULL/>
+      <DEFAULT value=""/>
+    </field>
+
+    <field name="parentId" type="I" size="10">
+      <NOTNULL/>
+      <DEFAULT value="0"/>
+    </field>
+
+    <field name="preserveOrder" type="I">
+      <NOTNULL/>
+      <DEFAULT value="0"/>
+    </field>
+
+    <field name="uniqueValues" type="I">
+      <NOTNULL/>
+      <DEFAULT value="0"/>
+    </field>
+
+  </table>
+
+ <table name="atMultipagePickerValues">
+    <field name="avID" type="I" size="10">
+      <KEY/>
+      <DEFAULT value="0"/>
+      <UNSIGNED/>
+    </field>
+
+    <field name="pageIDs" type="X2"></field>
+
+  </table>
+
+</schema>
