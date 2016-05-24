@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+
+  <table name="atIconSelectorOptions">
+    <field name="oid" type="I">
+      <key/>
+      <autoincrement/>
+    </field>
+    <field name="akID" type="I">
+      <key/>
+    </field>
+
+    <field name="optValue" type="X2" size="255"></field>
+    <field name="optIcon" type="I"></field>
+    
+  </table>
+
+  <table name="atIconSelectorSelected">
+    <field name="avID" type="I">
+      <key/>
+    </field>
+    <field name="optionID" type="I">
+      <key/>
+    </field>
+  </table>
+
+  <table name="atIconSelectorSettings">
+    <field name="akID" type="I">
+      <key/>
+      <autoincrement/>
+    </field>
+    <field name="akAllowMultipleValues" type="L"/>
+  </table>
+</schema>

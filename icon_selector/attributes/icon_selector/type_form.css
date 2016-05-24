@@ -1,0 +1,7 @@
+.atIconOptionWrapper { margin-top:4px; width: 100%; min-height:64px;
+margin-bottom:2px; border:1px solid #eee; padding:15px 20px;}
+.atIconOptionWrapper .leftCol{float:left; width: 75%; }
+.atIconOptionWrapper .rightCol{float:right; text-align:right; width: 25%; }
+.atIconOptionWrapper .rightCol .btn {margin-bottom: 10px; }
+.atIconOptionWrapper .editContainer { height: 100px; }
+.atIconOptionWrapper .editContainer input.editable{ width:100%; margin-bottom: 5px; }
