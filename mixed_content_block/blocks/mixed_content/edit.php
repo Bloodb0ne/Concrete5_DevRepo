@@ -7,11 +7,7 @@ $form = \Core::make('helper/form');
 // var_dump($controller->getViewType());
 ?>
 <div class='ccm-inline-toolbar' style='width:50%'>
-<?php echo $form->select('view_type',[
-	'1'=>'Full Text',
-	'2'=>'Left Image Right Text',
-	'3'=>'Right Image Left Text',
-	'4'=>'Two Image'],$controller->getViewType(),['style'=>'display:inline-block;width:80%;','class'=>'mixedContentBlockType']); ?>
+
 <div class="pull-right">
 	<button type='button' class='btn btn-toobar formControl cancelBlock'> Cancel </button>
 	<button type='button' class='btn btn-toobar btn-primary formControl saveBlock'> Save </button>
@@ -19,6 +15,11 @@ $form = \Core::make('helper/form');
 </div>
 <div class="clearfix"></div>
 <div class="typeFields" style='padding:5px;'>
+<?php echo $form->select('view_type',[
+	'1'=>'Full Text',
+	'2'=>'Left Image Right Text',
+	'3'=>'Right Image Left Text',
+	'4'=>'Two Image'],$controller->getViewType(),['style'=>'display:inline-block;width:80%;','class'=>'mixedContentBlockType']); ?>
 	<?php 
 		$al = Core::make('helper/concrete/asset_library');
 		// Create overlay that hides the image 
