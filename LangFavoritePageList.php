@@ -49,7 +49,9 @@ class LangFavoritePageList extends PageList{
             $query->andWhere("mmpr2.mpLocale = :loc");
             $query->setParameter('uID',(int)$uID);
             $query->setParameter('loc',\Localization::activeLocale());
-            var_dump(\Localization::activeLocale());
+            if($this->onlyFavorites) // Does this slow the query or what
+                $query->andWhere('mmpr2.mpRelationID in (' . $relation . ')');
+            // var_dump(\Localization::activeLocale());
             // echo $query->getSql();
         }
 
