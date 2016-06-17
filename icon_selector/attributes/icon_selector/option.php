@@ -2,6 +2,7 @@
 namespace Concrete\Package\IconSelector\Attribute\IconSelector;
 use Gettext\Translations;
 use Loader;
+use File;
 use \Concrete\Core\Foundation\Object;
 
 class Option extends Object {
@@ -15,6 +16,7 @@ class Option extends Object {
 	
 	public function getIconSelectAttributeOptionID() {return $this->oid;}
 	public function getIconSelectAttributeOptionImageID(){ return $this->optIcon; }
+	public function getIconSelectAttributeOptionImage(){ return \File::getByID($this->optIcon); }
 	public function getIconSelectAttributeOptionValue($sanitize = true) {
 		if (!$sanitize) {
 			return $this->optValue;
@@ -106,7 +108,7 @@ class Option extends Object {
         $r = $db->Execute('select oid from atIconSelectorOptions order by oid asc');
         while ($row = $r->FetchRow()) {
             $opt = static::getByID($row['oid']);
-            $translations->insert('IconSelectAttributeValue', $opt->getIconSelectAttributeOptionValue());
+            $res = $translations->insert('IconSelectAttributeValue', $opt->getIconSelectAttributeOptionValue());
         }
         return $translations;
     }

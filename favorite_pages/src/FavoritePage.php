@@ -22,10 +22,19 @@ class FavoritePage extends Controller{
 
 			//If user favorited remove entry else add entry
 			$db = Database::get();
-			$res = $db->GetRow("SELECT Count(cID) as num FROM UserPageFavorites WHERE uID=? and cID=?",array((int)$u->getUserID(),$pageID));
-			if($res['num'] == 1){
+			$res = $db->GetRow("SELECT mpRelationID as rel FROM MultilingualPageRelations WHERE cID=?",array($pageID));
+			$relation = $res['rel'];
+			// var_dump($relation);
+			// $res = $db->GetAll("SELECT cID FROM MultilingualPageRelations WHERE mpRelationID=?",array($relation));
+			// var_dump($res);
+			// if($res['rel'])
+			// $res = $db->GetRow("SELECT Count(fav.cID) as num FROM MultilingualPageRelations mppr LEFT JOIN UserPageFavorites fav ON mppr.cID = fav.cID where uID = ? and mpRelationID = ?",array((int)$u->getUserID(),$rel));
+			$res = $db->GetRow("SELECT Count(cID) as num FROM UserPageFavorites WHERE uID=? and cID in (SELECT cID FROM MultilingualPageRelations WHERE mpRelationID=?)",
+				array((int)$u->getUserID(),$relation));
+			// var_dump($res);
+			if($res['num'] > 0){
 				//Favorite Product
-				$db->Execute('DELETE FROM UserPageFavorites WHERE cID=? and uID=?',array($pageID,(int)$u->getUserID()));
+				$db->Execute('DELETE FROM UserPageFavorites WHERE cID in (SELECT cID FROM MultilingualPageRelations WHERE mpRelationID=?) and uID=?',array($relation,(int)$u->getUserID()));
 				echo json_encode(array('status'=>'unfavorited'));
 			}else{
 				//Unfavorite Product

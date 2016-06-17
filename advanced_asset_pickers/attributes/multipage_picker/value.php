@@ -30,7 +30,8 @@ class Value extends Object {
 	}
 
 	public function __toString() {
-		return $this->pageIDs;
+		// if($this->pageIDs)
+		return $this->pageIDs?$this->pageIDs:"";
 	}
 
 	public function getPages(){

@@ -1,5 +1,5 @@
 <?php
-namespace Application\Block\MixedContent;
+namespace Concrete\Package\MixedContentBlock\Block\MixedContent;
 
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\Editor\LinkAbstractor;
@@ -47,7 +47,7 @@ class Controller extends BlockController
     }
 
     public function getViewType(){
-        return $this->view_type;
+        return (int)$this->view_type;
     }
     public function getSearchableContent()
     {
@@ -65,6 +65,7 @@ class Controller extends BlockController
 
     public function view()
     {
+        // $this->set('contentType',$this->getViewType());
         $this->set('content', $this->getContent());
         $this->set('image_left',$this->getLeftImage());
         $this->set('image_right',$this->getRightImage());

@@ -28,7 +28,7 @@ class Value extends Object  {
 	}
 
 	public function __toString() {
-		return $this->fileIDs;
+		return $this->fileIDs?$this->fileIDs:"";
 	}
 	public function getFiles() {
 		$fileIDs = explode(",",$this->fileIDs);

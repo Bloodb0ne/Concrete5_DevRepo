@@ -6,16 +6,16 @@ defined('C5_EXECUTE') or die("Access Denied.");
 $form = \Core::make('helper/form');
 // var_dump($controller->getViewType());
 ?>
-<div class='ccm-inline-toolbar' style='width:50%'>
+<div class='ccm-ui ccm-inline-toolbar' style='width:50%'>
 
 <div class="pull-right">
-	<button type='button' class='btn btn-toobar formControl cancelBlock'> Cancel </button>
-	<button type='button' class='btn btn-toobar btn-primary formControl saveBlock'> Save </button>
+	<button type='button' class='btn btn-toolbar formControl cancelBlock'> Cancel </button>
+	<button type='button' class='btn btn-toolbar btn-primary formControl saveBlock'> Save </button>
 </div>
 </div>
 <div class="clearfix"></div>
 <div class="typeFields" style='padding:5px;'>
-<?php echo $form->select('view_type',[
+	<?php echo $form->select('view_type',[
 	'1'=>'Full Text',
 	'2'=>'Left Image Right Text',
 	'3'=>'Right Image Left Text',
